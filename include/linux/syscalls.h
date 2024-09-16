@@ -72,6 +72,7 @@ struct open_how;
 struct mount_attr;
 struct landlock_ruleset_attr;
 enum landlock_rule_type;
+struct rsakey;
 
 #include <linux/types.h>
 #include <linux/aio_abi.h>
@@ -1389,4 +1390,8 @@ int __sys_getsockopt(int fd, int level, int optname, char __user *optval,
 		int __user *optlen);
 int __sys_setsockopt(int fd, int level, int optname, char __user *optval,
 		int optlen);
+asmlinkage long sys_hello(void);
+asmlinkage long sys_getkey(struct rsakey *key);
+asmlinkage long sys_encrypt_rsa(__u16 message, struct rsakey *public_key);
+asmlinkage long sys_decrypt_rsa(__u32 cipher, struct rsakey *private_key);
 #endif

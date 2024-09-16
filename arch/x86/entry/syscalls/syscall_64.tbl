@@ -417,3 +417,7 @@
 547	x32	pwritev2		compat_sys_pwritev64v2
 # This is the end of the legacy x32 range.  Numbers 548 and above are
 # not special and are not to be used for x32-specific syscalls.
+548	64	hello			sys_hello
+549	64	getkey			sys_getkey
+550	64	encrypt_rsa		sys_encrypt_rsa
+551	64	decrypt_rsa		sys_decrypt_rsa
